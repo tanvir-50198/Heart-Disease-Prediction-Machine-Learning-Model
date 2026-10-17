@@ -1,4 +1,5 @@
 streamlit
 pandas
 numpy
+# Use the SAME scikit-learn version you trained model.pkl with (check: pip show scikit-learn)
 scikit-learn
