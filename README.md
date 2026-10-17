@@ -8,11 +8,28 @@ The application uses a trained **Logistic Regression** model to estimate whether
 
 ---
 
+## 🚀 Live Demo
+
+Try the deployed application:
+
+**🌐 Streamlit App:**  
+https://heart-disease-prediction-machine-learning-model-vrbmhep6zsbvjk.streamlit.app/
+
+## 💻 GitHub Repository
+
+View the complete source code and project files:
+
+**🔗 GitHub:**  
+https://github.com/tanvir-50198/Heart-Disease-Prediction-Machine-Learning-Model
+
+---
+
 ## 📸 Application Screenshots
+
+> Add your screenshots to the `images/` folder using the filenames shown below.
 
 ### 🏠 Prediction Dashboard
 
-<!-- Replace with your actual screenshot -->
 ![Prediction Dashboard](images/prediction-dashboard.png)
 
 The main prediction page allows users to enter patient information and generate a heart-disease risk prediction.
@@ -21,14 +38,13 @@ The main prediction page allows users to enter patient information and generate 
 
 ### 📊 Prediction Result
 
-<!-- Replace with your actual screenshot -->
 ![Prediction Result](images/prediction-result.png)
 
-The result page displays:
+The result section displays:
 
 - Prediction status
 - Estimated risk probability
-- Health indicator summary
+- Health indicators
 - Blood pressure category
 - BMI category
 - Cholesterol category
@@ -41,43 +57,44 @@ The result page displays:
 
 ### 📁 Batch Prediction
 
-<!-- Replace with your actual screenshot -->
 ![Batch Prediction](images/batch-prediction.png)
 
-Users can upload a CSV file containing multiple patient records and receive predictions for all valid records at once.
+Users can upload a CSV containing multiple patient records and generate predictions for all valid records.
+
+---
+
+### 🕘 Prediction History
+
+![Prediction History](images/prediction-history.png)
+
+The History page keeps track of predictions made during the current Streamlit session.
 
 ---
 
 ### 📈 Model Insights
 
-<!-- Replace with your actual screenshot -->
 ![Model Insights](images/model-insights.png)
 
 The Model Insights page provides information about:
 
-- Model algorithm
-- Number of input features
+- Machine learning algorithm
+- Input features
 - Model classes
 - Test accuracy
 - Feature coefficients
 - Training process
 - Dataset preparation
-- SMOTE balancing
+- SMOTE class balancing
 
 ---
 
-## 🚀 Live Demo
+# ✨ Features
 
-**Streamlit App:**  
-[Add your Streamlit deployment URL here]
+## 👤 Individual Prediction
 
----
+Users can enter information for an individual patient.
 
-## ✨ Features
-
-### 👤 Individual Prediction
-
-Enter information for a single patient, including:
+The application accepts:
 
 - Gender
 - Age
@@ -94,102 +111,124 @@ Enter information for a single patient, including:
 - Heart rate
 - Glucose
 
-The application then generates a model prediction.
+After entering the information, the trained model generates a prediction.
 
 ---
 
-### 📂 Batch Prediction
+## 📂 Batch Prediction
 
-The application supports CSV-based batch prediction.
+The application supports prediction for multiple patients through a CSV file.
 
-Users can:
+### Workflow
 
 1. Download the CSV template.
-2. Fill in patient records.
+2. Add patient records.
 3. Upload the CSV.
-4. Validate the input data.
-5. Generate predictions for all valid rows.
-6. Download the prediction results.
+4. The application validates the data.
+5. Invalid rows are skipped.
+6. Predictions are generated for valid records.
+7. Results can be downloaded as a CSV file.
 
-The application also detects:
+The batch system also detects:
 
 - Missing columns
+- Empty files
 - Blank values
 - Unreadable values
 - Invalid rows
-
-Invalid rows are skipped instead of stopping the entire prediction process.
+- Prediction errors
 
 ---
 
-### 🕘 Prediction History
+## 🕘 Prediction History
 
-The application keeps prediction history during the current Streamlit session.
+The application maintains prediction history during the current Streamlit session.
 
 Users can:
 
 - View previous predictions
-- See prediction timestamps
+- View prediction timestamps
 - Review patient information
-- See risk probabilities
-- Download prediction history
-- Clear the history
+- View prediction results
+- View estimated risk probabilities
+- Download history as CSV
+- Clear prediction history
 
-> History is session-based and is cleared when the Streamlit session ends.
+> Prediction history is session-based and is cleared when the Streamlit session ends.
 
 ---
 
-### 📊 Model Insights
+## 📊 Model Insights
 
-The application includes a dedicated Model Insights page.
+The application contains a dedicated **Model Insights** page.
 
 It displays:
 
-- Model algorithm
-- Number of features
+- Algorithm name
+- Number of input features
 - Model classes
 - Test accuracy
-- Logistic Regression coefficients
-- Feature directions
+- Feature coefficients
+- Coefficient direction
 - Training summary
 
-Positive coefficients indicate movement toward the **"At risk"** class, while negative coefficients indicate movement toward the **"Not at risk"** class.
+For Logistic Regression:
+
+- Positive coefficients indicate movement toward the **At Risk** class.
+- Negative coefficients indicate movement toward the **Not at Risk** class.
 
 ---
 
-### 🧮 BMI Calculator
+## 🧮 BMI Calculator
 
-Users can calculate BMI directly inside the application by entering:
+Users can calculate BMI directly inside the application.
+
+They can enter:
 
 - Height in centimeters
 - Weight in kilograms
 
-The calculated BMI can then be automatically applied to the prediction form.
+The application calculates BMI automatically and allows the calculated value to be applied to the prediction form.
 
 ---
 
-### 📥 Downloadable Reports
+## 📥 Downloadable Reports
 
-Prediction results can be exported as CSV files.
+The application provides downloadable CSV files for:
 
-Available downloads include:
+### Individual Prediction
 
-- Individual prediction report
-- Batch prediction results
-- Prediction history
-- CSV input template
+```text
+heart_disease_prediction.csv
+```
+
+### Batch Prediction
+
+```text
+heart_disease_batch_results.csv
+```
+
+### Prediction History
+
+```text
+heart_disease_history.csv
+```
+
+### CSV Template
+
+```text
+heart_disease_template.csv
+```
 
 ---
 
-## 🧠 Machine Learning Model
+# 🧠 Machine Learning
 
-The application uses:
+## Logistic Regression
 
-### Logistic Regression
+The application uses **Logistic Regression** as its classification algorithm.
 
-Logistic Regression is a supervised classification algorithm used to estimate the probability of an observation belonging to a particular class.
-
-In this project:
+The model predicts two classes:
 
 ```text
 0 → Not at risk
@@ -202,27 +241,27 @@ The trained model is stored in:
 model.pkl
 ```
 
-The Streamlit application loads this model using Python's `pickle` module.
+The Streamlit application loads the trained model using Python's `pickle` module.
 
 ---
 
-## 📊 Model Performance
+# 📊 Model Performance
 
 According to the project notebook, the model achieved:
 
 | Metric | Result |
 |---|---:|
 | Test Accuracy | **64.2%** |
-| Test Split | **20%** |
 | Training Split | **80%** |
+| Testing Split | **20%** |
 
 The reported accuracy comes from the project's **20% hold-out test set**.
 
-> The application displays this value as a project-notebook result rather than recalculating model performance during inference.
+> The application displays this project-notebook accuracy in the Model Insights page.
 
 ---
 
-## 📚 Dataset
+# 📚 Dataset
 
 The project uses a heart-disease dataset containing:
 
@@ -231,25 +270,29 @@ The project uses a heart-disease dataset containing:
 15 columns
 ```
 
-The dataset contains:
+The dataset consists of:
 
-- 14 input features
-- 1 heart-disease outcome column
+```text
+14 input features
++
+1 heart-disease outcome
+```
 
-### Dataset Processing
+---
 
-The project notebook performs the following preparation steps:
+## 🧹 Data Preprocessing
 
-1. Removes the `education` column.
-2. Handles missing values by removing incomplete rows.
-3. Converts relevant categorical fields into numerical values.
-4. Separates input features and target.
-5. Balances the target classes using SMOTE.
-6. Splits the data into training and testing sets.
-7. Trains the Logistic Regression model.
-8. Saves the trained model as `model.pkl`.
+The project notebook performs several preprocessing steps.
 
-After removing the `education` column and rows containing missing values:
+### 1. Remove unnecessary column
+
+The `education` column is removed.
+
+### 2. Handle missing values
+
+Rows containing missing values are removed.
+
+After cleaning:
 
 ```text
 3,749 records
@@ -257,25 +300,77 @@ After removing the `education` column and rows containing missing values:
 
 remain.
 
+### 3. Encode categorical values
+
+Relevant categorical variables are converted into numerical representations.
+
+For example:
+
+```text
+Male   → 1
+Female → 0
+```
+
+and binary variables are represented as:
+
+```text
+Yes → 1
+No  → 0
+```
+
+### 4. Separate features and target
+
+The dataset is divided into:
+
+```text
+X → Input features
+y → Target variable
+```
+
+### 5. Handle class imbalance
+
+SMOTE is used to balance the target classes.
+
+### 6. Train/test split
+
+The data is divided into:
+
+```text
+80% → Training
+20% → Testing
+```
+
+### 7. Train Logistic Regression
+
+The Logistic Regression model is trained using the processed training data.
+
+### 8. Save the model
+
+The trained model is serialized into:
+
+```text
+model.pkl
+```
+
 ---
 
-## ⚖️ Class Balancing with SMOTE
+# ⚖️ SMOTE Class Balancing
 
-The original cleaned dataset contained an imbalanced target:
+The cleaned dataset contained an imbalanced target distribution:
 
-```text
-No  → 3,177
-Yes →   572
-```
+| Class | Records |
+|---|---:|
+| No | 3,177 |
+| Yes | 572 |
 
-To address the class imbalance, **SMOTE (Synthetic Minority Over-sampling Technique)** was applied.
+The project uses **SMOTE (Synthetic Minority Over-sampling Technique)** to address this imbalance.
 
-After balancing:
+After applying SMOTE:
 
-```text
-No  → 3,177
-Yes → 3,177
-```
+| Class | Records |
+|---|---:|
+| No | 3,177 |
+| Yes | 3,177 |
 
 Total balanced records:
 
@@ -285,9 +380,9 @@ Total balanced records:
 
 ---
 
-## 🔢 Input Features
+# 🔢 Model Input Features
 
-The trained model expects the following 14 features in this exact order:
+The model expects the following **14 features in this exact order**:
 
 ```text
 Gender
@@ -306,14 +401,16 @@ heartRate
 glucose
 ```
 
-### Feature Description
+---
+
+## Feature Description
 
 | Feature | Description |
 |---|---|
 | `Gender` | Patient gender |
 | `age` | Age in years |
 | `currentSmoker` | Current smoking status |
-| `cigsPerDay` | Cigarettes smoked per day |
+| `cigsPerDay` | Number of cigarettes smoked per day |
 | `BPMeds` | Blood-pressure medication status |
 | `prevalentStroke` | Previous stroke status |
 | `prevalentHyp` | Hypertension status |
@@ -323,54 +420,56 @@ glucose
 | `diaBP` | Diastolic blood pressure |
 | `BMI` | Body Mass Index |
 | `heartRate` | Resting heart rate |
-| `glucose` | Blood glucose level |
+| `glucose` | Blood glucose level in mg/dL |
 
 ---
 
-## 🔄 Prediction Workflow
+# 🔄 Prediction Workflow
 
 ```text
-Patient Input
-      │
-      ▼
-Input Validation
-      │
-      ▼
-Feature Encoding
-      │
-      ▼
-Create DataFrame
-      │
-      ▼
-Trained Logistic Regression
-      │
-      ▼
-Prediction
-      │
-      ├───────────────┐
-      ▼               ▼
-Not at risk        At risk
-      │               │
-      └───────┬───────┘
-              ▼
-      Risk Probability
-              │
-              ▼
-       Health Indicators
-              │
-              ▼
-       Download Report
+              Patient Information
+                       │
+                       ▼
+                Input Validation
+                       │
+                       ▼
+                 Feature Encoding
+                       │
+                       ▼
+                 Pandas DataFrame
+                       │
+                       ▼
+             Trained Logistic Regression
+                       │
+                       ▼
+                  Prediction
+                 /          \
+                /            \
+               ▼              ▼
+          Not at risk       At risk
+               \              /
+                \            /
+                 ▼          ▼
+                Risk Probability
+                       │
+                       ▼
+                Health Indicators
+                       │
+                       ▼
+                 Download Report
 ```
 
 ---
 
-## 🏥 Health Indicators
+# 🏥 Health Indicators
 
-The application also provides general reference-based indicators for:
+In addition to the machine-learning prediction, the application provides general reference-based health indicators.
 
-### Blood Pressure
+These are **not model predictions**.
 
-The application categorizes blood pressure into:
+## Blood Pressure
+
+The application categorizes blood pressure as:
 
 - Normal
 - Elevated
@@ -378,189 +477,44 @@ The application categorizes blood pressure into:
 - High (stage 2)
 - Hypertensive crisis range
 
-### BMI
+## BMI
 
-The application categorizes BMI as:
+Categories:
 
 - Underweight
 - Healthy weight
 - Overweight
 - Obese
 
-### Total Cholesterol
+## Total Cholesterol
 
-Categories include:
+Categories:
 
 - Desirable
 - Borderline high
 - High
 
-### Glucose
+## Glucose
 
-Categories include:
+Categories:
 
 - Normal
 - Elevated
 - High
 
-### Heart Rate
+## Heart Rate
 
-Categories include:
+Categories:
 
 - Below typical resting range
 - Typical resting range
 - Above typical resting range
 
-> These indicators are reference information shown by the application and are **not model predictions**.
-
 ---
 
-## 🛠️ Technology Stack
+# 📁 CSV Batch Prediction Format
 
-| Technology | Purpose |
-|---|---|
-| Python | Programming language |
-| Streamlit | Web application framework |
-| Pandas | Data processing |
-| Scikit-learn | Machine learning |
-| Logistic Regression | Classification model |
-| SMOTE | Class balancing |
-| Pickle | Model serialization |
-| HTML/CSS | Custom UI styling |
-
----
-
-## 🎨 User Interface
-
-The application uses a custom dark-themed UI with:
-
-- Purple/lavender accent colors
-- Responsive layout
-- Fixed sidebar navigation
-- Custom cards
-- Custom buttons
-- Custom input fields
-- Prediction status pills
-- Progress bars
-- Responsive mobile styling
-- Dark-friendly data tables
-
-### Navigation
-
-```text
-❤️ Heart Disease
-│
-├── Predict
-├── Batch Prediction
-├── History
-├── Model Insights
-└── About
-```
-
----
-
-## 📁 Project Structure
-
-```text
-Heart-Disease-Prediction/
-│
-├── app.py
-├── model.pkl
-├── requirements.txt
-├── README.md
-│
-└── images/
-    ├── prediction-dashboard.png
-    ├── prediction-result.png
-    ├── batch-prediction.png
-    └── model-insights.png
-```
-
-> Your project only requires `app.py` and the trained `model.pkl` for the application itself. The `images/` directory is only for README screenshots.
-
----
-
-## ⚙️ Installation
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/tanvir-50198/Heart-Disease-Prediction-Machine-Learning-Model.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
-cd Heart-Disease-Prediction-Machine-Learning-Model
-```
-
-### 3. Create a virtual environment
-
-Windows:
-
-```bash
-python -m venv .venv
-```
-
-Activate it:
-
-```bash
-.venv\Scripts\activate
-```
-
----
-
-### 4. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### 5. Make sure `model.pkl` exists
-
-The application expects:
-
-```text
-model.pkl
-```
-
-in the same directory as:
-
-```text
-app.py
-```
-
----
-
-### 6. Run the application
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
----
-
-## 📦 Requirements
-
-Example `requirements.txt`:
-
-```text
-streamlit
-pandas
-scikit-learn
-```
-
-If your saved model was trained using additional libraries, those libraries should also be included in `requirements.txt`.
-
----
-
-## 📄 CSV Batch Prediction Format
-
-The uploaded CSV must contain these columns:
+The uploaded CSV must contain the following columns:
 
 ```text
 Gender
@@ -579,32 +533,42 @@ heartRate
 glucose
 ```
 
-### Example
+Column names are handled case-insensitively.
+
+---
+
+## Example CSV
 
 ```csv
 Gender,age,currentSmoker,cigsPerDay,BPMeds,prevalentStroke,prevalentHyp,diabetes,totChol,sysBP,diaBP,BMI,heartRate,glucose
 Female,59,No,0,No,No,Yes,No,209,150,85,20.77,90,88
 ```
 
-The application accepts:
+### Accepted values
+
+Gender:
 
 ```text
-Gender:
-Male / Female
-1 / 0
-
-Binary fields:
-Yes / No
-1 / 0
+Male
+Female
+1
+0
 ```
 
-Column names are handled case-insensitively.
+Binary fields:
+
+```text
+Yes
+No
+1
+0
+```
 
 ---
 
-## 🧪 Example Prediction
+# 🧪 Example Patient
 
-The application includes an example patient:
+The application includes a built-in example patient.
 
 ```text
 Gender: Female
@@ -623,7 +587,7 @@ Heart rate: 90 bpm
 Glucose: 88 mg/dL
 ```
 
-You can load this example directly using:
+Users can load this example using:
 
 ```text
 Fill example patient
@@ -631,69 +595,266 @@ Fill example patient
 
 ---
 
-## 🔐 Model Loading
+# 🛠️ Technology Stack
 
-The application automatically searches for the model using:
+| Technology | Purpose |
+|---|---|
+| **Python** | Programming language |
+| **Streamlit** | Web application |
+| **Pandas** | Data processing |
+| **Scikit-learn** | Machine learning |
+| **Logistic Regression** | Classification |
+| **SMOTE** | Class balancing |
+| **Pickle** | Model serialization |
+| **HTML/CSS** | Custom interface |
 
-```python
-MODEL_PATH = Path(__file__).parent / "model.pkl"
+---
+
+# 🎨 User Interface
+
+The application includes a custom dark-themed interface.
+
+### UI Features
+
+- Dark mode
+- Purple/lavender accent design
+- Fixed sidebar navigation
+- Responsive layout
+- Custom cards
+- Custom buttons
+- Custom input fields
+- Prediction status badges
+- Risk probability progress bar
+- Health indicator cards
+- Custom data tables
+- Responsive mobile styling
+
+---
+
+## Navigation
+
+```text
+❤️ Heart Disease Risk Prediction
+│
+├── ❤️ Predict
+│
+├── 📁 Batch Prediction
+│
+├── 🕘 History
+│
+├── 📈 Model Insights
+│
+└── ℹ️ About
 ```
 
-This means `model.pkl` does not need to be referenced using an absolute path.
+---
 
-The model is loaded with Streamlit's resource cache:
+# 📂 Project Structure
+
+```text
+Heart-Disease-Prediction-Machine-Learning-Model/
+│
+├── app.py
+├── model.pkl
+├── requirements.txt
+├── README.md
+│
+└── images/
+    ├── prediction-dashboard.png
+    ├── prediction-result.png
+    ├── batch-prediction.png
+    ├── prediction-history.png
+    └── model-insights.png
+```
+
+### Main Files
+
+| File | Description |
+|---|---|
+| `app.py` | Main Streamlit application |
+| `model.pkl` | Trained Logistic Regression model |
+| `requirements.txt` | Python dependencies |
+| `README.md` | Project documentation |
+| `images/` | README screenshots |
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/tanvir-50198/Heart-Disease-Prediction-Machine-Learning-Model.git
+```
+
+---
+
+## 2. Open the Project
+
+```bash
+cd Heart-Disease-Prediction-Machine-Learning-Model
+```
+
+---
+
+## 3. Create a Virtual Environment
+
+For Windows:
+
+```bash
+python -m venv .venv
+```
+
+Activate it:
+
+```bash
+.venv\Scripts\activate
+```
+
+---
+
+## 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 5. Check `model.pkl`
+
+Make sure the trained model is located in the same directory as `app.py`:
+
+```text
+app.py
+model.pkl
+```
+
+The application automatically searches for:
+
+```python
+Path(__file__).parent / "model.pkl"
+```
+
+---
+
+## 6. Run the Application
+
+```bash
+streamlit run app.py
+```
+
+The application will then open in your browser.
+
+---
+
+# 📦 Requirements
+
+A basic `requirements.txt` can contain:
+
+```text
+streamlit
+pandas
+scikit-learn
+```
+
+The exact dependencies should match the environment used to train and save `model.pkl`.
+
+> The application also checks the installed Scikit-learn version when loading the saved model because model compatibility can depend on the version used during training.
+
+---
+
+# 🔐 Model Loading
+
+The trained model is loaded from:
+
+```text
+model.pkl
+```
+
+using Python's `pickle` module.
+
+The application uses Streamlit resource caching:
 
 ```python
 @st.cache_resource
 def load_model():
-    ...
+    with open(MODEL_PATH, "rb") as f:
+        return pickle.load(f)
 ```
 
-This avoids repeatedly loading the model during normal Streamlit reruns.
+This prevents unnecessary repeated model loading during Streamlit reruns.
 
 ---
 
-## 🧩 Error Handling
+# 🧩 Validation & Error Handling
 
-The application includes validation and error handling for:
+The application includes error handling for:
 
 - Missing `model.pkl`
 - Model loading errors
-- Incompatible scikit-learn versions
+- Scikit-learn version incompatibility
 - Missing CSV columns
 - Empty CSV files
 - Invalid CSV values
-- Invalid patient rows
-- Model prediction failures
-- Invalid blood-pressure relationships
+- Blank patient fields
+- Invalid batch rows
+- Prediction failures
+- Incorrect blood-pressure relationships
 
-For example, if systolic blood pressure is lower than or equal to diastolic blood pressure, the application displays a warning.
+For example, the application warns users if:
+
+```text
+Systolic BP <= Diastolic BP
+```
 
 ---
 
-## ⚠️ Important Limitation
+# 📌 Important Limitations
 
-This project is intended for **educational and portfolio purposes**.
+This project is designed for **educational and portfolio purposes**.
 
-It should not be used as:
+It should **not** be used as:
 
 - A medical diagnostic system
-- A replacement for a doctor
+- A clinical decision-making system
+- A replacement for a healthcare professional
 - A treatment recommendation system
-- A clinical decision-making tool
 
-The model's prediction represents a statistical estimate based on the training data and selected features.
+The model's prediction is a statistical estimate based on the dataset and trained machine-learning model.
 
 ---
 
-## 👨‍💻 Author
+# 🔮 Future Improvements
 
-**Abdur Rahman Tanvir**
+Possible future improvements include:
 
-B.Sc. in Computer Science and Engineering  
+- Cross-validation
+- Hyperparameter tuning
+- Precision, Recall and F1-score analysis
+- Confusion matrix visualization
+- ROC-AUC analysis
+- Model comparison
+- Random Forest implementation
+- XGBoost implementation
+- Model calibration
+- SHAP-based explainable AI
+- Persistent prediction history
+- Database integration
+- User authentication
+- Improved risk calibration
+- Automated model retraining
+
+---
+
+# 👨‍💻 Author
+
+## Abdur Rahman Tanvir
+
+**B.Sc. in Computer Science and Engineering**  
 American International University-Bangladesh (AIUB)
 
-### Areas of Interest
+### Interests
 
 - Machine Learning
 - Artificial Intelligence
@@ -701,38 +862,24 @@ American International University-Bangladesh (AIUB)
 - Backend Development
 - Full-Stack Development
 
-### Profiles
+### 🔗 Profiles
 
-- GitHub: https://github.com/tanvir-50198
-- LinkedIn: https://linkedin.com/in/tanvir-rahman-50198/
-
----
-
-## ⭐ Future Improvements
-
-Possible future improvements include:
-
-- Better model performance
-- Additional classification algorithms
-- Cross-validation
-- Hyperparameter tuning
-- ROC-AUC analysis
-- Precision, recall and F1-score reporting
-- Confusion matrix visualization
-- Explainable AI methods such as SHAP
-- Persistent prediction history
-- User authentication
-- Database integration
-- Improved model calibration
+- **GitHub:** https://github.com/tanvir-50198
+- **LinkedIn:** https://linkedin.com/in/tanvir-rahman-50198/
 
 ---
 
-## 📜 License
+# 🔗 Project Links
 
-This project is intended for educational and portfolio purposes.
+| Resource | Link |
+|---|---|
+| 🌐 **Live Demo** | https://heart-disease-prediction-machine-learning-model-vrbmhep6zsbvjk.streamlit.app/ |
+| 💻 **GitHub Repository** | https://github.com/tanvir-50198/Heart-Disease-Prediction-Machine-Learning-Model |
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
 If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
+**Thank you for visiting the project! ❤️**
